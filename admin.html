@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - EXABYTE</title>
+    <link rel="stylesheet" href="./css/admin.css">
+
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>EXABYTE Admin Panel</h1>
+            <div class="auth-section">
+                <!-- Login Form -->
+                <div id="login-form">
+                    <input type="email" id="admin-email" placeholder="Email">
+                    <input type="password" id="admin-password" placeholder="Password">
+                    <button onclick="handleLogin()">Login</button>
+                    <!-- Remove these elements -->
+                    
+                    <!-- Remove the entire forgot password form -->
+                    <div id="forgot-form">
+                        <!-- Email Step -->
+                        <div id="email-step">
+                            <h3>Reset Password</h3>
+                            <input type="email" id="recovery-email" placeholder="Enter your email">
+                            <button onclick="sendVerificationCode()">Send Code</button>
+                            <button class="back-btn" onclick="showLoginForm()">Back to Login</button>
+                        </div>
+                        
+                        <!-- Verification Step -->
+                        <div id="code-step" style="display: none;">
+                            <h3>Enter Verification Code</h3>
+                            <input type="text" id="verification-code" placeholder="Enter 6-digit code">
+                            <input type="password" id="new-password" placeholder="Enter new password">
+                            <button onclick="verifyCodeAndResetPassword()">Reset Password</button>
+                            <button class="back-btn" onclick="showEmailStep()">Back</button>
+                        </div>
+                    </div>
+                </div>
+                <button id="logout-btn" style="display: none;" onclick="handleLogout()">Logout</button>
+            </div>
+        </div>
+
+        <div id="admin-content" style="display: none;">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('contacts')">Contact Submissions</button>
+                <button class="tab-btn" onclick="showTab('applications')">Job Applications</button>
+            </div>
+
+            <div id="contacts-tab" class="tab-content">
+                <h2>Contact Form Submissions</h2>
+                <div id="contacts-list" class="data-table"></div>
+            </div>
+
+            <div id="applications-tab" class="tab-content" style="display: none;">
+                <h2>Job Applications</h2>
+                <div id="applications-list" class="data-table"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Update script loading order -->
+    <!-- Before closing body tag -->
+        <!-- Before closing body tag -->
+            <!-- Fix the script order and initialization -->
+            <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+            <script>
+                // Initialize supabaseClient before loading admin.js
+                const supabaseClient = supabase.createClient(
+                    'https://hdqpffnjnlnswcghykxa.supabase.co',
+                    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhkcXBmZm5qbmxuc3djZ2h5a3hhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ4MDQ5MDMsImV4cCI6MjA2MDM4MDkwM30.W-P0gcbydi_vQ6iOcCyGOcKDo3S7_858l0edP_rcLXU'
+                );
+            </script>
+            <script src="./js/admin.js"></script>
+    </body>
+</html>

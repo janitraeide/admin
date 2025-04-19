@@ -24,7 +24,7 @@ a{
 
 
 .navbar {
-    width: 20rem;
+    width: 25rem;
     background-color: #B3B3B3;
     display: flex;
     align-items: center;
@@ -36,6 +36,45 @@ a{
     padding: 0.3rem 0.5rem;
     border-radius: 1000px;
     z-index: 10000000000;
+}
+
+/* Add this media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        width: 90%;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .nav-btn {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .nav-logo a {
+        font-size: 1.2rem;
+    }
+
+    .nav-btn-wrapper {
+        gap: 0.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        width: 95%;
+        padding: 0.2rem 0.3rem;
+    }
+
+    .nav-btn {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+}
+.nav-btn-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.3rem;
 }
 
 .nav-btn {
@@ -50,6 +89,7 @@ a{
     gap: 1rem;
     padding: 0.5rem 1rem;
     border-radius: 100px;
+    gap: 1rem;
 }
 
 .nav-btn a{
@@ -237,7 +277,7 @@ h1 sup {
     background: #000;
     position: relative;
     overflow: hidden;
-    padding: var(--padding);
+    padding: 2rem;
 }
 
 .eng-container {
@@ -295,11 +335,6 @@ h1 sup {
     top: -200px; /* Alternative way to move up */
 }
 
-.company-name h2 {
-    font-size: clamp(5rem, 10vw, 10rem);
-    letter-spacing: 0.1em;
-    font-weight: 300;
-}
 
 .company-name .subtitle {
     font-size: clamp(0.75rem, 2vw, 1rem);
@@ -349,7 +384,7 @@ h1 sup {
 
 .grid-line-horizontal {
     position: absolute;
-    height: 1px;
+    height: 0px;
     width: 0%;
     background: rgb(30, 30, 30);
     left: 0;
@@ -371,7 +406,7 @@ h1 sup {
 }
 
 .company-name h2 {
-    font-size: clamp(3rem, 10vw, 15rem);
+    font-size: clamp(3rem, 5vw, 10rem);
     letter-spacing: 0.1em;
     font-weight: 300;
 }
@@ -674,7 +709,7 @@ h1 sup {
 .contact {
     min-height: 100vh;
     background-color: var(--bg-color);
-    padding: 8rem var(--padding);
+    padding: var(--padding);
 }
 
 .contact-container {
@@ -703,7 +738,6 @@ h1 sup {
 
 .form-group {
     position: relative;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: all ease .5s;
 }
 
@@ -717,10 +751,33 @@ h1 sup {
     padding: 1rem 0;
     background: transparent;
     border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--text-color);
+    font-family: inherit;
     font-size: 1rem;
-    transition: all 0.3s ease;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    transition: all ease .5s;
 }
+
+.form-group:focus {
+    border-color: var(--primary-color);
+}
+
+.form-group option {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 1rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+
 
 .form-group textarea {
     height: 100px;
@@ -791,4 +848,65 @@ h1 sup {
 
 .line{
     overflow: hidden;
+}
+
+.careers{
+    padding:var(--padding)
+}
+
+.careers select {
+    width: 100%;
+    padding: 1rem 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    transition: all ease .5s;
+}
+
+.careers select:focus {
+    border-color: var(--primary-color);
+}
+
+.careers select option {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 1rem;
+}
+
+.careers .form-group {
+    position: relative;
+}
+
+
+.careers .form-group input[type="file"]::file-selector-button {
+    background: var(--primary-color);
+    border: none;
+    color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    cursor: pointer;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.careers .form-group small {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 0.8rem;
+}
+
+.cs{
+    width: 100%;
+    height: 20vh;
 }

@@ -10,14 +10,22 @@
     <main>
 
         <div class="navbar">
-            <div class="nav-logo"><a href="#hero">NEXUS</a></div>
-            <div class="nav-btn"> <a href="#con">CONTACT</a></div>
+            <div class="nav-logo"><a href="index.html#hero">EXABYTE</a></div>
+            <div class="nav-btn-wrapper">
+
+                <div class="nav-btn">
+                    <a href="index.html#con">CONTACT</a>
+                </div>
+                <div class="nav-btn">
+                    <a href="careers.html">CAREERS</a>
+                </div>
+            </div>
         </div>
 
         <section id="hero" class="hero">
             <div class="hero-content">
                 <div class="title-wrapper">
-                    <h1>MANIFEST</h1>
+                    <h1>EXABYTE</h1>
                 </div>
                 <div class="hero-image">
                     <img src="./images/Colleagues-Collaborating.webp" alt="Hero image">
@@ -114,7 +122,7 @@
                 </div>
                 <div class="eng-bottom">
                     <div class="company-name">
-                        <h2 data-split="lines">NEXUS</h2>
+                        <h2 data-split="lines">EXABYTE</h2>
                     </div>
                 </div>
             </div>
@@ -129,7 +137,7 @@
                     </p>
                     <div class="quote-author">
                         <p class="name">John Smith</p>
-                        <p class="position">Technical Director, NEXUS</p>
+                        <p class="position">Technical Director, EXABYTE</p>
                     </div>
                 </div>
             </div>
@@ -142,34 +150,34 @@
                 </div>
                 
                 <div class="contact-content">
-                    <form class="contact-form">
+                    <!-- Add to contact form -->
+                    <!-- Update form fields with name attributes -->
+                    <form class="contact-form" onsubmit="handleContactSubmission(event)">
                         <div class="form-group">
-                            <input type="text" placeholder="FULL NAME" required>
+                            <input type="text" name="full_name" placeholder="FULL NAME" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="EMAIL" required>
+                            <input type="email" name="email" placeholder="EMAIL" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="PHONE" required>
+                            <input type="tel" name="phone" placeholder="PHONE" required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="MESSAGE" required></textarea>
+                            <textarea name="message" placeholder="MESSAGE" required></textarea>
                         </div>
                         <button type="submit" class="submit-btn">SEND MESSAGE</button>
                     </form>
 
+                    <!-- Add this before closing body tag, after Supabase initialization -->
+                    <script src="./js/contact-form.js"></script>
                     <div class="contact-info">
                         <div class="info-item">
-                            <p data-split="lines">LEDUC<br>
-                            100 KING AVENUE<br>
-                            LEDUC AB T9E 6Z6<br>
-                            780.986.8946</p>
+                            <p data-split="lines">Pedro Colomalaan 2 - 2880 Bornem<br>
+                                info@exabyte.be<br>
                         </div>
                         <div class="info-item">
-                            <p data-split="lines">SPRUCE GROVE<br>
-                            203 DIAMOND AVENUE<br>
-                            SPRUCE AB T7X 3A4<br>
-                            780.962.3311</p>
+                            <p data-split="lines">+32 3 369 01 20<br>
+                                BE0806079995<br>
                         </div>
                     </div>
                 </div>
@@ -177,7 +185,7 @@
         </section>
 
         <section class="footer">
-            <h3>NEXUS</h3>
+            <h3>EXABYTE</h3>
                     </section>
   
         
@@ -187,37 +195,20 @@
 <!-- <script src="libs/SplitText.js"></script> -->
 <script src="https://unpkg.com/split-type"></script>
 
-<script>
-let typeSplit = new SplitType('.quote-text', {
-  types: 'lines, words, chars',
-  tagName: 'span'
-})
-
-gsap.timeline({
-  scrollTrigger: {
-    trigger: '.quote',
-    start: 'top top',
-    end: '400%',
-    pin: true,
-    pinSpacing: true,
-    scrub: 1
-  }
-})
-.from('.quote-text .word', {
-  opacity: 0.1,
-  duration: 1,
-  ease: 'power1.out',
-  stagger: 0.1
-})
-.to('.quote-text .word', {
-  opacity: 0.1,
-  duration: 0.5,
-  stagger: 0.05
-});
-</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script> 
+<!-- Replace the existing Supabase related scripts with these (just before closing </body> tag) -->
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script>
+    // Initialize Supabase
+    const supabaseUrl = 'https://hdqpffnjnlnswcghykxa.supabase.co'
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhkcXBmZm5qbmxuc3djZ2h5a3hhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ4MDQ5MDMsImV4cCI6MjA2MDM4MDkwM30.W-P0gcbydi_vQ6iOcCyGOcKDo3S7_858l0edP_rcLXU'
+    const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey)
+</script>
+<script src="./js/supabase-config.js"></script>
+
 
 <script>
 let footer = new SplitType('.footer h3', {
@@ -241,8 +232,6 @@ gsap.from('.footer h3 .char', {
 
 
 <script src="./js/main.js"></script>
-<!-- Add before closing body tag, after other scripts -->
-<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script> 
 
 <script>
 const lenis = new Lenis({
@@ -276,5 +265,35 @@ gsap.ticker.add((time) => {
 // Optional: Update ScrollTrigger when Lenis scrolls
 lenis.on('scroll', ScrollTrigger.update);
 </script>
+
+<script>
+    let typeSplit = new SplitType('.quote-text', {
+      types: 'lines, words, chars',
+      tagName: 'span'
+    })
+    
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.quote',
+        start: 'top top',
+        end: '400%',
+        pin: true,
+        pinSpacing: true,
+        scrub: 1
+      }
+    })
+    .from('.quote-text .word', {
+      opacity: 0.1,
+      duration: 1,
+      ease: 'power1.out',
+      stagger: 0.1
+    })
+    .to('.quote-text .word', {
+      opacity: 0.1,
+      duration: 0.5,
+      stagger: 0.05
+    });
+    </script>
+    
 </body>
 </html>

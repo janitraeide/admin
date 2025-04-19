@@ -1,0 +1,222 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-header h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.auth-section input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 12px 20px;
+    margin-right: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.auth-section button, .tab-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-radius: 4px;
+}
+
+.auth-section button:hover, .tab-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.tab-btn.active {
+    background: #fff;
+    color: #000;
+}
+
+.tabs {
+    margin-bottom: 30px;
+}
+
+.tab-content {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab-content h2 {
+    margin-top: 0;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.data-table {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+    min-width: 800px;
+}
+
+th {
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+td a{
+    color:#77cbec;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .auth-section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .auth-section input {
+        width: 100%;
+        margin: 0;
+    }
+
+    .tabs {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tab-btn {
+        width: 100%;
+    }
+
+    .data-table {
+        margin: 0 -20px;
+        padding: 0 20px;
+    }
+}
+
+/* Add smooth scrolling for table on mobile */
+@media (max-width: 1024px) {
+    .data-table {
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+}
+
+/* Add these styles after the auth-section button styles */
+.forgot-btn, .back-btn {
+    background: transparent !important;
+    border: none !important;
+    color: #77cbec !important;
+    text-decoration: underline;
+    padding: 5px !important;
+    margin-top: 10px;
+}
+
+.forgot-btn:hover, .back-btn:hover {
+    color: #fff !important;
+    background: transparent !important;
+}
+
+/* Remove these styles */
+#forgot-form {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: #333333;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#email-step, #code-step {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.back-btn {
+    background: #666;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.back-btn:hover {
+    background: #555;
+}
+
+.forgot-btn {
+    background: none;
+    border: none;
+    color: #0066cc;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 10px;
+}
+
+.forgot-btn:hover {
+    color: #0052a3;
+}
+
+#verification-code {
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+#new-password {
+    margin-top: 10px;
+}
