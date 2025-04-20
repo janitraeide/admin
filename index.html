@@ -172,12 +172,8 @@
                     <script src="./js/contact-form.js"></script>
                     <div class="contact-info">
                         <div class="info-item">
-                            <p data-split="lines">Pedro Colomalaan 2 - 2880 Bornem<br>
-                                info@exabyte.be<br>
-                        </div>
-                        <div class="info-item">
-                            <p data-split="lines">+32 3 369 01 20<br>
-                                BE0806079995<br>
+                            <p data-split="lines">Eduard Van Beinumstraat 22 in Amsterdam (postal code 1077 CZ)<br>
+                                hr@exabyteacquisitionbv.com<br>
                         </div>
                     </div>
                 </div>
@@ -199,7 +195,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script> 
-<!-- Replace the existing Supabase related scripts with these (just before closing </body> tag) -->
+
 <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 <script>
     // Initialize Supabase
@@ -224,7 +220,8 @@ gsap.from('.footer h3 .char', {
   
   scrollTrigger: {
     trigger: '.footer',
-    start: 'top bottom',
+    start: '500%',
+    // markers: true,
     
   }
 })
