@@ -1,0 +1,1 @@
+// Remove the entire content of this file as we've moved the initialization to the HTML file
